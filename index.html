@@ -193,36 +193,106 @@
       margin-bottom: 22px;
     }
 
+    /* New Visual Card Styles */
     .visual {
-      border-radius: 22px;
-      background:
-        linear-gradient(135deg, rgba(168, 85, 247, 0.34), rgba(34, 211, 238, 0.18)),
-        #172554;
-      padding: 26px;
-      border: 1px solid rgba(167, 139, 250, 0.45);
-      box-shadow: 0 24px 70px rgba(124, 58, 237, 0.22);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(30, 41, 82, 0.95), rgba(23, 37, 84, 0.98));
+      padding: 32px;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      box-shadow: 
+        0 24px 70px rgba(124, 58, 237, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
-    .visual::before {
-      content: "Governance Operating System";
-      display: block;
-      color: #ffffff;
+    .visual-header {
+      margin-bottom: 28px;
+    }
+
+    .visual-label {
+      font-size: 0.75rem;
       font-weight: 800;
-      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #22d3ee;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .visual-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
       letter-spacing: -0.02em;
+      margin-bottom: 20px;
     }
 
-    .visual-line {
-      height: 13px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.85), rgba(255,255,255,0.22));
-      border-radius: 999px;
-      margin-bottom: 14px;
+    .visual-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .visual-line:nth-child(2) { width: 92%; }
-    .visual-line:nth-child(3) { width: 76%; }
-    .visual-line:nth-child(4) { width: 84%; }
-    .visual-line:nth-child(5) { width: 58%; }
+    .metric-tile {
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .metric-tile:hover {
+      background: rgba(168, 85, 247, 0.18);
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #22d3ee;
+    }
+
+    .visual-status {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .status-row:last-child {
+      border-bottom: none;
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22d3ee;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .status-text {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
 
     .links {
       display: flex;
@@ -269,6 +339,19 @@
 
       .hero {
         padding-top: 58px;
+      }
+
+      .visual-metrics {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .visual-title {
+        font-size: 1.2rem;
+      }
+
+      .visual {
+        padding: 24px;
       }
     }
   </style>
@@ -352,12 +435,41 @@
               </div>
             </div>
 
-            <div class="visual" aria-label="Abstract AI governance visual">
-              <div class="visual-line"></div>
-              <div class="visual-line"></div>
-              <div class="visual-line"></div>
-              <div class="visual-line"></div>
-              <div class="visual-line"></div>
+            <div class="visual" aria-label="GovernIQ AI Governance Dashboard">
+              <div class="visual-header">
+                <span class="visual-label">GovernIQ</span>
+                <h3 class="visual-title">AI Governance Dashboard</h3>
+              </div>
+
+              <div class="visual-metrics">
+                <div class="metric-tile">
+                  <div class="metric-label">AI Systems</div>
+                  <div class="metric-value">24</div>
+                </div>
+                <div class="metric-tile">
+                  <div class="metric-label">Risk Reviews</div>
+                  <div class="metric-value">8</div>
+                </div>
+                <div class="metric-tile">
+                  <div class="metric-label">Board Reports</div>
+                  <div class="metric-value">3</div>
+                </div>
+              </div>
+
+              <div class="visual-status">
+                <div class="status-row">
+                  <div class="status-indicator"></div>
+                  <div class="status-text">System Intake</div>
+                </div>
+                <div class="status-row">
+                  <div class="status-indicator"></div>
+                  <div class="status-text">Risk Classification</div>
+                </div>
+                <div class="status-row">
+                  <div class="status-indicator"></div>
+                  <div class="status-text">Executive Reporting</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
